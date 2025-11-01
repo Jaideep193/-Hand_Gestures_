@@ -1,8 +1,8 @@
-# ðŸ–ï¸ Hand Gestures Media Control
+# 🖐️ Hand Gestures Media Control
 
 A real-time hand gesture recognition system that enables touchless media control using computer vision. Control your media playback, volume, and other functions with simple hand gestures captured through your webcam.
 
-## ðŸ“‹ Table of Contents
+## 📋 Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
@@ -14,11 +14,11 @@ A real-time hand gesture recognition system that enables touchless media control
 - [Project Structure](#project-structure)
 - [Future Enhancements](#future-enhancements)
 
-## ðŸŽ¯ Overview
+## 🎯 Overview
 
 This project leverages **MediaPipe** for hand tracking and gesture detection to provide an intuitive, touchless interface for controlling media playback. The system recognizes various hand gestures in real-time and translates them into keyboard commands for media control.
 
-## âœ¨ Features
+## ✨ Features
 
 - **Real-time Hand Tracking**: Uses MediaPipe's hand landmark detection for accurate tracking
 - **Gesture Recognition**: Detects multiple hand gestures with high accuracy
@@ -27,7 +27,7 @@ This project leverages **MediaPipe** for hand tracking and gesture detection to 
 - **Low Latency**: Minimal delay between gesture and action
 - **Easy to Use**: Simple webcam-based interface requiring no additional hardware
 
-## ðŸ› ï¸ Technology Stack
+## 🛠️ Technology Stack
 
 - **Python 3.x**
 - **OpenCV**: For video capture and image processing
@@ -35,7 +35,7 @@ This project leverages **MediaPipe** for hand tracking and gesture detection to 
 - **NumPy**: For mathematical calculations and distance measurements
 - **PyAutoGUI**: For simulating keyboard inputs
 
-## ðŸ“¦ Installation
+## 📦 Installation
 
 ### Prerequisites
 - Python 3.7 or higher
@@ -44,149 +44,5 @@ This project leverages **MediaPipe** for hand tracking and gesture detection to 
 ### Steps
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Jaideep193/-Hand_Gestures_.git
-   cd -Hand_Gestures_
-   ```
-
-2. **Install required dependencies**
-   ```bash
-   pip install opencv-python mediapipe numpy pyautogui
-   ```
-
-   Or use the requirements file (if available):
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application**
-   ```bash
-   python main.py
-   ```
-
-## ðŸš€ Usage
-
-1. Run the `main.py` script
-2. Allow camera access when prompted
-3. Position your hand in front of the webcam
-4. Perform gestures to control media playback
-5. Press **'q'** to quit the application
-
-## ðŸ¤š Supported Gestures
-
-| Gesture | Action | Description |
-|---------|--------|-------------|
-| ðŸ‘ **Thumbs Up** | Play | Thumb pointing upward triggers play/pause (Space key) |
-| ðŸ‘Ž **Thumbs Down** | Stop | Thumb pointing downward stops playback |
-| â˜ï¸ **Forefinger Up** | Volume Up | Index finger raised increases volume |
-| ðŸ‘‡ **Finger Down** | Volume Down | Index finger lowered decreases volume |
-| âœ‹ **Full Palm** | Play/Pause | Open palm toggles play/pause (Space key) |
-| âœŒï¸ **Two Fingers Up** | - | Index and middle fingers raised (detected but no action assigned) |
-
-## ðŸ” How It Works
-
-### 1. **Hand Detection**
-- MediaPipe's hand landmark model detects 21 key points on the hand
-- The system tracks finger tips, joints, and wrist position in real-time
-
-### 2. **Gesture Recognition**
-The `detect_gesture()` function analyzes hand landmarks to identify gestures:
-- **Distance calculations**: Measures distances between finger tips and palm landmarks
-- **Position analysis**: Compares y-coordinates to determine finger positions
-- **Gesture classification**: Uses threshold-based logic to classify gestures
-
-### 3. **Action Execution**
-- Recognized gestures trigger PyAutoGUI keyboard commands
-- Commands control media players and system volume
-- Visual feedback shows detected landmarks on the video feed
-
-### Algorithm Flow
-```
-Webcam Input â†’ Hand Detection â†’ Landmark Extraction â†’ Distance Calculation â†’ Gesture Classification â†’ Action Execution
-```
-
-## ðŸ“‹ Requirements
-
-Create a `requirements.txt` file with:
-```
-opencv-python>=4.5.0
-mediapipe>=0.8.0
-numpy>=1.19.0
-pyautogui>=0.9.50
-```
-
-## ðŸ“ Project Structure
-
-```
--Hand_Gestures_/
-â”‚
-â”œâ”€â”€ main.py                 # Main application file
-â”œâ”€â”€ README.md              # Project documentation
-â””â”€â”€ requirements.txt       # Python dependencies (optional)
-```
-
-## ðŸŽ® Key Functions
-
-### `detect_gesture(hand_landmarks)`
-Analyzes hand landmarks to classify gestures based on:
-- Finger tip positions relative to each other
-- Distance between thumb and other fingers
-- Overall hand orientation and palm width
-- Vertical positions (y-coordinates) of finger tips
-
-### Main Loop
-- Captures video frames from webcam
-- Processes frames with MediaPipe
-- Draws hand landmarks for visual feedback
-- Detects gestures and executes corresponding actions
-
-## ðŸ”§ Configuration
-
-You can customize the gesture detection by modifying:
-- **Distance thresholds**: Adjust sensitivity in the `detect_gesture()` function
-- **Gesture mappings**: Change keyboard commands in the main loop
-- **Camera source**: Modify `cv2.VideoCapture(0)` to use different camera
-
-## ðŸš§ Future Enhancements
-
-- [ ] Add more gesture types (swipe, pinch, rotate)
-- [ ] Custom gesture training and recognition
-- [ ] Multi-hand gesture support
-- [ ] Gesture history and analytics
-- [ ] GUI for gesture customization
-- [ ] Support for multiple applications (browser, music player, video player)
-- [ ] Gesture sensitivity adjustment
-- [ ] Recording and playback of gesture sequences
-
-## ðŸ› Troubleshooting
-
-**Camera not detected?**
-- Check camera permissions
-- Try changing camera index: `cv2.VideoCapture(1)` or `cv2.VideoCapture(2)`
-
-**Gestures not recognized?**
-- Ensure good lighting conditions
-- Keep hand within camera frame
-- Adjust distance from camera (recommended: 1-2 feet)
-
-**High CPU usage?**
-- Reduce camera resolution
-- Lower frame processing rate
-
-## ðŸ“ License
-
-This project is open source and available under the MIT License.
-
-## ðŸ‘¨â€ðŸ’» Author
-
-**Jaideep**
-- GitHub: [@Jaideep193](https://github.com/Jaideep193)
-
-## ðŸ™ Acknowledgments
-
-- [MediaPipe](https://mediapipe.dev/) for hand tracking solution
-- [OpenCV](https://opencv.org/) for computer vision capabilities
-
----
-
-â­ **Star this repository if you find it helpful!**
+git clone https://github.com/Jaideep193/-Hand_Gestures_.git
+cd -Hand_Gestures_
