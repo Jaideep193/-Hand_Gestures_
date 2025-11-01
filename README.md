@@ -11,7 +11,6 @@ A real-time hand gesture recognition system that enables touchless media control
 - [Supported Gestures](#supported-gestures)
 - [How It Works](#how-it-works)
 - [Requirements](#requirements)
-- [Project Structure](#project-structure)
 - [Future Enhancements](#future-enhancements)
 
 ## 🎯 Overview
@@ -112,15 +111,6 @@ mediapipe>=0.8.0
 numpy>=1.19.0
 pyautogui>=0.9.50
 
-
-
-## 📁 Project Structure
-
--Hand_Gestures_/
-│
-├── main.py # Main application file
-├── README.md # Project documentation
-└── requirements.txt # Python dependencies (optional)
 
 
 
