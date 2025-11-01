@@ -46,3 +46,8 @@ This project leverages **MediaPipe** for hand tracking and gesture detection to 
 1. **Clone the repository**
 git clone https://github.com/Jaideep193/-Hand_Gestures_.git
 cd -Hand_Gestures_
+2. **Install required dependencies**
+pip install opencv-python mediapipe numpy pyautogui
+
+Or use the requirements file (if available):
+pip install -r requirements.txt
